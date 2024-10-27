@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Dream Role - Set Up Account</title>
+</head>
+<body>
+    <div class="main-container">
+        <div class="left-container">
+            <div class="title">
+                <h2> Select your personal Skills </h2>
+                <h4> Select up to 3 skills </h4>
+            </div>
+
+            <div class="button-container">
+                <button id="nextButton" class="next-button" disabled>Next</button>
+            </div>
+        </div> 
+
+        <div class="right-container">
+            <div class="skills"> </div>
+        </div>
+
+    </div>
+
+    <script>
+        // List of skills
+        const skills = [
+            "Problem Solving",
+            "Creativity",
+            "Teamwork",
+            "Time Management",
+            "Adaptability",
+            "Communication",
+            "Leadership",
+            "Attention to Detail",
+            "Critical Thinking"
+        ];
+
+        // Max number of selectable skills
+        const maxSelections = 3;
+
+        // Track selected skills
+        let selectedSkills = [];
+
+        // Select the container where skills will be added
+        const skillsContainer = document.querySelector('.skills');
+        const nextButton = document.getElementById('nextButton');
+
+        // Function to handle skill selection
+        function toggleSkillSelection(skillDiv) {
+            const skill = skillDiv.textContent;
+        
+            if (selectedSkills.includes(skill)) {
+                // If already selected, remove from selected list and reset color
+                selectedSkills = selectedSkills.filter(s => s !== skill);
+                skillDiv.classList.remove('selected');
+            } else if (selectedSkills.length < maxSelections) {
+                // If not selected and within limit, add to selected list and change color
+                selectedSkills.push(skill);
+                skillDiv.classList.add('selected');
+            }
+        
+            // Enable or disable the "Next" button based on selected skills
+            if (selectedSkills.length > 0) {
+                nextButton.disabled = false; // Enable button
+                nextButton.classList.add('enabled'); // Add enabled class
+            } else {
+                nextButton.disabled = true; // Disable button
+                nextButton.classList.remove('enabled'); // Remove enabled class
+            }
+        }
+
+        // Loop through each skill and create a "bubble" for it
+        skills.forEach(skill => {
+            // Create a div element for each skill
+            const skillDiv = document.createElement('div');
+            skillDiv.classList.add('skill-bubble');
+            skillDiv.textContent = skill;
+        
+            // Add click event listener for selection
+            skillDiv.addEventListener('click', () => toggleSkillSelection(skillDiv));
+        
+            // Append the skill bubble to the skills container
+            skillsContainer.appendChild(skillDiv);
+        });
+
+        // Initially disable the "Next" button
+        nextButton.disabled = true;
+
+        // A// Navigate to set up page II when button clicked
+        nextButton.addEventListener('click', function() {
+            window.location.href = 'setup2.html';
+        });
+
+    </script>
+    
+    
+    
+</body>
+</html>

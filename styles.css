@@ -1,0 +1,217 @@
+body {
+    margin: 1.25rem;
+    margin: 25px;
+    font-family: Arial, sans-serif;
+    Background-color: #5E20D4;
+    background-image: url("assets/wallpaper.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    background-size: 100% 100%;
+}
+
+/* Header styling */
+header {
+    display: flex;
+    justify-content: space-between; /* Aligns logo to the left and nav links to the right */
+    align-items: center;
+    padding: 10px 20px;
+}
+
+/* Logo styling */
+.logo img {
+    height: 60px;
+    width: auto; 
+}
+
+/* Navigation bar styling */
+ul.navlist {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navlist li {
+    margin-left: 15px; /* Space between nav items */
+}
+
+.navlist li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+    border: 2px solid #BB86FC;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.navlist li a:hover,
+.navlist li a.active {
+    box-shadow: 0 0 20px #BB86FC;
+    background: #BB86FC;
+    color: white;
+}
+
+#jobCards {
+    background: rgba(255, 255, 255, 0.2); /* White background with transparency */
+    box-shadow: 0 4px 30px rgba(169, 43, 43, 0.1); /* Subtle shadow */
+    backdrop-filter: blur(10px); /* Blurs the background behind the div */
+    margin-bottom: 1.25rem;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    border: #72E1E1;
+    border-style: solid;
+    border-width: medium;
+    border-radius: 0 4px 4px 4px;
+
+}
+
+.job {
+    display: flex;
+    flex-direction: column;
+    padding: 0.625rem;
+    margin: 1.25rem;
+    background: rgba(255, 255, 255, .5);
+    border-radius: 0.3rem;
+    box-shadow: 0rem 0.3rem 1rem rgba(5, 189, 196, .3);
+}
+
+.job h1 {
+    font-size: 1.5rem;
+    margin-bottom: 0;
+}
+
+.job p {
+    font-size: 1.1rem;
+    margin-bottom: 0.3rem;
+    margin-top: 0.1rem;
+    color: #F92B85;
+}
+
+a {
+    color: #F92B85;
+    text-decoration: none;
+}
+
+.checked {
+    color: #F92B85;
+}
+
+#myBtnContainer {
+    display: inline-flex;
+}
+
+.btn {
+    background: rgba(255, 255, 255, .5);
+    box-sizing: border-box;
+    border: none;
+    border-bottom-color: rgba(255, 255, 255, .5);
+    color: white;
+    border-radius: 0.3rem 0.3rem 0 0;
+    margin-right: 0.625rem;
+    padding: 0.3rem;
+    font-size: 1.2rem;
+}
+
+/* Style for the selected button */
+.selected {
+    /* background: rgba(255, 255, 255, 0.2); /* White background with transparency */
+    /* box-shadow: 0 4px 30px rgba(169, 43, 43, 0.1); /* Subtle shadow */
+    /* backdrop-filter: blur(10px); Blurs the background behind the div */
+    background-color: #72E1E1;
+    border-radius: 0.3rem 0.3rem 0 0;
+    padding: 0.3rem 1.25rem;
+    color: white;
+    border: #72E1E1;
+    border-style: solid;
+}
+
+img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 0.3rem;
+}
+
+/* Modal overlay styling */
+.job-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    max-width: 600px;
+    width: 90%;
+    text-align: center;
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.dashboard {
+    background: rgba(255, 255, 255, 0.5); /* White background with transparency */
+    box-shadow: 0 4px 30px rgba(169, 43, 43, 0.1); /* Subtle shadow */
+    backdrop-filter: blur(10px);
+    border-radius: 4px;
+    max-width: 1000px;
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+    margin: auto;
+}
+
+@media all and (max-width: 1465px) {
+    html {
+        font-size: 14px;
+    }
+
+    #jobCards {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media all and (max-width: 1032px) {
+    html {
+        font-size: 12px;
+    }
+
+    #jobCards {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media all and (max-width: 675px) {
+    html {
+        font-size: 12px;
+    }
+
+    #jobCards {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .container {
+        width: 250px;
+        margin: 0.7rem auto;
+    }
+
+    .job {
+        text-align: center;
+        margin: 0.7rem auto;
+    }
+}

@@ -1,0 +1,159 @@
+body {
+    overflow: hidden; /* Hide scrollbars */
+    margin: 0;
+    font-family: Arial, sans-serif;
+    Background-color: #5E20D4;
+    background-image: url("assets/wallpaper.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    background-size: 100% 100%;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+}
+
+.left-container {
+    background: rgba(255, 255, 255, 0.2); /* White background with transparency */
+    box-shadow: 0 4px 30px rgba(169, 43, 43, 0.1); /* Subtle shadow */
+    backdrop-filter: blur(10px); /* Blurs the background behind the div */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Border to enhance the glass effect */
+    width: 40%;
+    color: white;
+    text-shadow: 1px 1px #5e0d70;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.bio {
+    padding: 0  50px 50px 50px;
+}
+
+.right-container {
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.form-container {
+    background-color: whitesmoke;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 30px;
+    width: 400px;
+    min-height: 300px;
+    box-sizing: border-box;
+}
+
+.form-container label {
+    margin-top: 10px;
+    font-size: 1rem;
+}
+
+.form-container input {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+
+.form-container button {
+    align-self: center;
+    width: 100%;
+    padding: 8px;
+    margin-top: 15px;
+    background-color: #72E1E1;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.form-container button:hover {
+    background-color: #72E1E1;
+    opacity: 90%;
+}
+
+.signup-container {
+    text-align: center;
+    width: 100%;
+    margin-top: 10px;
+    color: white;
+}
+
+.signup-container p {
+    margin: 5px 0;
+}
+
+a:link {
+    color: #72E1E1;
+}
+
+a:visited {
+    color: #C8A1FE;
+}
+
+.title {
+    text-align: center;
+    color: white;
+    text-shadow: 1px 1px #5e0d70;
+    font-size: large;
+}
+
+.skills, .interests {
+    display: flex;
+    flex-wrap: wrap; /* Allows skills to wrap to the next line */
+    gap: 10px; /* Space between each skill bubble */
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    max-width: 1000px;
+}
+
+.skill-bubble, .interest-bubble {
+    padding: 10px 20px;
+    background-color: #C8A1FE;
+    color: white;
+    border-radius: 100px;
+    padding: 30px 30px;
+    cursor: pointer;
+}
+
+.skill-bubble.selected, .interest-bubble.selected {
+    background-color: #72E1E1;
+}
+
+.button-container {
+    display: flex; /* Enable flexbox on the button container */
+    justify-content: flex-end; /* Align items to the right */
+    margin-top: 80px;
+}
+
+.next-button {
+    padding: 10px 40px;
+    border: none;
+    border-radius: 4px;
+    background-color: gray; 
+    color: white;
+    font-size: large;
+}
+
+.next-button.enabled {
+    background-color: #72E1E1;
+    cursor: pointer;
+}
+
+.logo {
+    width: 250px;
+}

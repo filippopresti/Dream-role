@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Dream Role - Home</title>
+</head>
+<body>
+    <!-- Navigation bar -->
+    <header>
+        <div class="logo">
+            <img src="assets/logo.png" alt="Logo" />
+        </div>
+
+        <ul class="navlist">
+            <li><a href="home.html" class="active">Home</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="profile.html">Profile</a></li>
+        </ul>
+    </header>
+
+    <!-- Control buttons -->
+    <div id="myBtnContainer">
+        <!-- Button to show all jobs -->
+        <button class="btn selected" onclick="selectButton(this), filterSelection('job')"> For You </button>
+        <!-- Buttons to show any job with a specif rating -->
+        <button class="btn" onclick="selectButton(this), filterSelection('art-and-design')"> Art and Design</button>
+        <button class="btn" onclick="selectButton(this), filterSelection('technology-and-computing')"> Technology and Computing</button>
+        <button class="btn" onclick="selectButton(this), filterSelection('science-and-research')"> Science and Research </button>
+        <button class="btn" onclick="selectButton(this), filterSelection('health-and-medicine')"> Health and Medicine </button>
+    </div>
+
+    <!-- Container for displaying job cards -->
+    <div id="jobCards"> </div>
+
+    <div id="jobModal" class="job-modal" style="display: none;">
+        <div class="modal-content">
+            <span id="closeModal" class="close">&times;</span>
+            <h1 id="modalJobTitle"></h1>
+            <p id="modalInterests"></p>
+            <p id="modalDescription"></p>
+            <video width="320" height="240" controls>
+                <source src="assets/video.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+              </video>
+        </div>
+    </div>
+
+    <!-- Link to the Google Sheets document -->
+    <a href="https://docs.google.com/spreadsheets/d/1amftbev5u_N-wtlQnpHvuiQgQ3azCb2KbAACgrsSGz8/edit?usp=sharing"
+        target="_blank">Link to spreadsheets</a>
+    <!-- Include the JavaScript file -->
+    <script src="main.js"></script>
+</body>
+</html>

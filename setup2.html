@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Dream Role - Set Up Account</title>
+</head>
+
+<body>
+    <div class="main-container">
+        <div class="left-container">
+            <div class="title">
+                <h2> Select your personal Interests </h2>
+                <h4> Select up to 3 interests </h4>
+            </div>
+
+            <div class="button-container">
+                <button id="nextButton" class="next-button" disabled>Next</button>
+            </div>
+        </div> 
+
+        <div class="right-container">
+            <div class="interests"> </div>
+        </div>
+
+    </div>
+
+    <script>
+        // List of interests
+        const interests = ["Social & Community Services",
+         "Sports & Physical Fitness",
+         "Sales & Marketing",
+         "Media & Entertainment",
+         "Hospitality & Culinary Arts",
+         "Environment & Agriculture",
+         "Engineering & Architecture",
+         "Public Service & Law",
+         "Finance & Accounting",
+         "Education & Training",
+         "Writing & Communication",
+         "Business & Management",
+         "Health & Medicine",
+         "Science & Research",
+         "Technology & Computing",
+         "Art & Design"];
+
+        // Max number of selectable interests
+        const maxSelections = 3;
+
+        // Track selected interests
+        let selectedinterests = [];
+
+        // Select the container where interests will be added
+        const interestsContainer = document.querySelector('.interests');
+        const nextButton = document.getElementById('nextButton');
+
+        // Function to handle interest selection
+        function toggleinterestSelection(interestDiv) {
+            const interest = interestDiv.textContent;
+        
+            if (selectedinterests.includes(interest)) {
+                // If already selected, remove from selected list and reset color
+                selectedinterests = selectedinterests.filter(s => s !== interest);
+                interestDiv.classList.remove('selected');
+            } else if (selectedinterests.length < maxSelections) {
+                // If not selected and within limit, add to selected list and change color
+                selectedinterests.push(interest);
+                interestDiv.classList.add('selected');
+            }
+        
+            // Enable or disable the "Next" button based on selected interests
+            if (selectedinterests.length > 0) {
+                nextButton.disabled = false; // Enable button
+                nextButton.classList.add('enabled'); // Add enabled class
+            } else {
+                nextButton.disabled = true; // Disable button
+                nextButton.classList.remove('enabled'); // Remove enabled class
+            }
+        }
+
+        // Loop through each interest and create a "bubble" for it
+        interests.forEach(interest => {
+            // Create a div element for each interest
+            const interestDiv = document.createElement('div');
+            interestDiv.classList.add('interest-bubble');
+            interestDiv.textContent = interest;
+        
+            // Add click event listener for selection
+            interestDiv.addEventListener('click', () => toggleinterestSelection(interestDiv));
+        
+            // Append the interest bubble to the interests container
+            interestsContainer.appendChild(interestDiv);
+        });
+
+        // Initially disable the "Next" button
+        nextButton.disabled = true;
+
+        // Navigate to home page when button clicked
+        nextButton.addEventListener('click', function() {
+            window.location.href = 'home.html';
+        });
+
+    </script>
+</body>
+</html>
